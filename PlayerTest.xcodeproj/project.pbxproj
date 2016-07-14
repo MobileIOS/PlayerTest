@@ -15,6 +15,23 @@
 		5F0AE2021D338939005995F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F0AE2011D338939005995F6 /* Assets.xcassets */; };
 		5F0AE2051D338939005995F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F0AE2031D338939005995F6 /* LaunchScreen.storyboard */; };
 		5F0AE2101D33893A005995F6 /* PlayerTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AE20F1D33893A005995F6 /* PlayerTestTests.m */; };
+		5F0AE21B1D3389E2005995F6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0AE21A1D3389E2005995F6 /* MediaPlayer.framework */; };
+		5F0AE21D1D338A22005995F6 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0AE21C1D338A22005995F6 /* AVKit.framework */; };
+		5F0AE21F1D338BE5005995F6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0AE21E1D338BE5005995F6 /* AVFoundation.framework */; };
+		5F6DA87A1D37404A0095B8CA /* XZPlayProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6DA8791D37404A0095B8CA /* XZPlayProgressView.m */; };
+		5F6DA87F1D375FA20095B8CA /* icon_progress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA87B1D375FA20095B8CA /* icon_progress@2x.png */; };
+		5F6DA8801D375FA20095B8CA /* icon_progress@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA87C1D375FA20095B8CA /* icon_progress@3x.png */; };
+		5F6DA8811D375FA20095B8CA /* icon_repeat_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA87D1D375FA20095B8CA /* icon_repeat_video@2x.png */; };
+		5F6DA8821D375FA20095B8CA /* icon_repeat_video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA87E1D375FA20095B8CA /* icon_repeat_video@3x.png */; };
+		5F6DA88B1D37605D0095B8CA /* icon_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA8831D37605D0095B8CA /* icon_full@2x.png */; };
+		5F6DA88C1D37605D0095B8CA /* icon_full@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA8841D37605D0095B8CA /* icon_full@3x.png */; };
+		5F6DA88D1D37605D0095B8CA /* icon_pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA8851D37605D0095B8CA /* icon_pause@2x.png */; };
+		5F6DA88E1D37605D0095B8CA /* icon_pause@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA8861D37605D0095B8CA /* icon_pause@3x.png */; };
+		5F6DA88F1D37605D0095B8CA /* icon_play_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA8871D37605D0095B8CA /* icon_play_hl@2x.png */; };
+		5F6DA8901D37605D0095B8CA /* icon_play_hl@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA8881D37605D0095B8CA /* icon_play_hl@3x.png */; };
+		5F6DA8911D37605D0095B8CA /* icon_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA8891D37605D0095B8CA /* icon_play@2x.png */; };
+		5F6DA8921D37605D0095B8CA /* icon_play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6DA88A1D37605D0095B8CA /* icon_play@3x.png */; };
+		5FA36BE61D3656F700A086F6 /* XCAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA36BE51D3656F700A086F6 /* XCAVPlayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +59,25 @@
 		5F0AE20B1D33893A005995F6 /* PlayerTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayerTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F0AE20F1D33893A005995F6 /* PlayerTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerTestTests.m; sourceTree = "<group>"; };
 		5F0AE2111D33893A005995F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F0AE21A1D3389E2005995F6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		5F0AE21C1D338A22005995F6 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		5F0AE21E1D338BE5005995F6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5F6DA8781D37404A0095B8CA /* XZPlayProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZPlayProgressView.h; sourceTree = "<group>"; };
+		5F6DA8791D37404A0095B8CA /* XZPlayProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZPlayProgressView.m; sourceTree = "<group>"; };
+		5F6DA87B1D375FA20095B8CA /* icon_progress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_progress@2x.png"; sourceTree = "<group>"; };
+		5F6DA87C1D375FA20095B8CA /* icon_progress@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_progress@3x.png"; sourceTree = "<group>"; };
+		5F6DA87D1D375FA20095B8CA /* icon_repeat_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_repeat_video@2x.png"; sourceTree = "<group>"; };
+		5F6DA87E1D375FA20095B8CA /* icon_repeat_video@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_repeat_video@3x.png"; sourceTree = "<group>"; };
+		5F6DA8831D37605D0095B8CA /* icon_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_full@2x.png"; sourceTree = "<group>"; };
+		5F6DA8841D37605D0095B8CA /* icon_full@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_full@3x.png"; sourceTree = "<group>"; };
+		5F6DA8851D37605D0095B8CA /* icon_pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_pause@2x.png"; sourceTree = "<group>"; };
+		5F6DA8861D37605D0095B8CA /* icon_pause@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_pause@3x.png"; sourceTree = "<group>"; };
+		5F6DA8871D37605D0095B8CA /* icon_play_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_play_hl@2x.png"; sourceTree = "<group>"; };
+		5F6DA8881D37605D0095B8CA /* icon_play_hl@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_play_hl@3x.png"; sourceTree = "<group>"; };
+		5F6DA8891D37605D0095B8CA /* icon_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_play@2x.png"; sourceTree = "<group>"; };
+		5F6DA88A1D37605D0095B8CA /* icon_play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_play@3x.png"; sourceTree = "<group>"; };
+		5FA36BE41D3656F700A086F6 /* XCAVPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCAVPlayerView.h; sourceTree = "<group>"; };
+		5FA36BE51D3656F700A086F6 /* XCAVPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCAVPlayerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0AE21F1D338BE5005995F6 /* AVFoundation.framework in Frameworks */,
+				5F0AE21D1D338A22005995F6 /* AVKit.framework in Frameworks */,
+				5F0AE21B1D3389E2005995F6 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				5F0AE1F11D338939005995F6 /* PlayerTest */,
+				5F6DA8931D379B110095B8CA /* Frameworks */,
 				5F0AE20E1D33893A005995F6 /* PlayerTestTests */,
 				5F0AE1F01D338939005995F6 /* Products */,
 			);
@@ -93,6 +133,10 @@
 				5F0AE2061D338939005995F6 /* Info.plist */,
 				5F0AE1FE1D338939005995F6 /* PlayerTest.xcdatamodeld */,
 				5F0AE1F21D338939005995F6 /* Supporting Files */,
+				5FA36BE41D3656F700A086F6 /* XCAVPlayerView.h */,
+				5FA36BE51D3656F700A086F6 /* XCAVPlayerView.m */,
+				5F6DA8781D37404A0095B8CA /* XZPlayProgressView.h */,
+				5F6DA8791D37404A0095B8CA /* XZPlayProgressView.m */,
 			);
 			path = PlayerTest;
 			sourceTree = "<group>";
@@ -100,6 +144,18 @@
 		5F0AE1F21D338939005995F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F6DA8831D37605D0095B8CA /* icon_full@2x.png */,
+				5F6DA8841D37605D0095B8CA /* icon_full@3x.png */,
+				5F6DA8851D37605D0095B8CA /* icon_pause@2x.png */,
+				5F6DA8861D37605D0095B8CA /* icon_pause@3x.png */,
+				5F6DA8871D37605D0095B8CA /* icon_play_hl@2x.png */,
+				5F6DA8881D37605D0095B8CA /* icon_play_hl@3x.png */,
+				5F6DA8891D37605D0095B8CA /* icon_play@2x.png */,
+				5F6DA88A1D37605D0095B8CA /* icon_play@3x.png */,
+				5F6DA87B1D375FA20095B8CA /* icon_progress@2x.png */,
+				5F6DA87C1D375FA20095B8CA /* icon_progress@3x.png */,
+				5F6DA87D1D375FA20095B8CA /* icon_repeat_video@2x.png */,
+				5F6DA87E1D375FA20095B8CA /* icon_repeat_video@3x.png */,
 				5F0AE1F31D338939005995F6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -112,6 +168,16 @@
 				5F0AE2111D33893A005995F6 /* Info.plist */,
 			);
 			path = PlayerTestTests;
+			sourceTree = "<group>";
+		};
+		5F6DA8931D379B110095B8CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F0AE21E1D338BE5005995F6 /* AVFoundation.framework */,
+				5F0AE21C1D338A22005995F6 /* AVKit.framework */,
+				5F0AE21A1D3389E2005995F6 /* MediaPlayer.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +229,7 @@
 				TargetAttributes = {
 					5F0AE1EE1D338939005995F6 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = RDLPRV575D;
+						DevelopmentTeam = AQ52PR9Q8D;
 					};
 					5F0AE20A1D33893A005995F6 = {
 						CreatedOnToolsVersion = 7.3;
@@ -196,9 +262,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F6DA88C1D37605D0095B8CA /* icon_full@3x.png in Resources */,
+				5F6DA8901D37605D0095B8CA /* icon_play_hl@3x.png in Resources */,
+				5F6DA88B1D37605D0095B8CA /* icon_full@2x.png in Resources */,
 				5F0AE2051D338939005995F6 /* LaunchScreen.storyboard in Resources */,
 				5F0AE2021D338939005995F6 /* Assets.xcassets in Resources */,
+				5F6DA87F1D375FA20095B8CA /* icon_progress@2x.png in Resources */,
+				5F6DA88F1D37605D0095B8CA /* icon_play_hl@2x.png in Resources */,
+				5F6DA8821D375FA20095B8CA /* icon_repeat_video@3x.png in Resources */,
+				5F6DA8921D37605D0095B8CA /* icon_play@3x.png in Resources */,
+				5F6DA8801D375FA20095B8CA /* icon_progress@3x.png in Resources */,
+				5F6DA88E1D37605D0095B8CA /* icon_pause@3x.png in Resources */,
+				5F6DA8811D375FA20095B8CA /* icon_repeat_video@2x.png in Resources */,
+				5F6DA88D1D37605D0095B8CA /* icon_pause@2x.png in Resources */,
 				5F0AE1FD1D338939005995F6 /* Main.storyboard in Resources */,
+				5F6DA8911D37605D0095B8CA /* icon_play@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +298,8 @@
 				5F0AE1FA1D338939005995F6 /* ViewController.m in Sources */,
 				5F0AE1F71D338939005995F6 /* AppDelegate.m in Sources */,
 				5F0AE1F41D338939005995F6 /* main.m in Sources */,
+				5FA36BE61D3656F700A086F6 /* XCAVPlayerView.m in Sources */,
+				5F6DA87A1D37404A0095B8CA /* XZPlayProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,10 +427,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PlayerTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feixiongTV.PlayerTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -358,10 +442,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PlayerTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feixiongTV.PlayerTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -408,6 +496,7 @@
 				5F0AE2161D33893A005995F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F0AE2171D33893A005995F6 /* Build configuration list for PBXNativeTarget "PlayerTestTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +505,7 @@
 				5F0AE2191D33893A005995F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
