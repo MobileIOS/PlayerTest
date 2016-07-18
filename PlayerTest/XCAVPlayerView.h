@@ -12,6 +12,7 @@ typedef NS_ENUM(NSInteger,XCAVPlayerStatues){
     XCPlayerStatusReadyToPlay,
     XCPlayerStatusFailed,
     XCPlayerStatusUnknown,
+    XCPlayerStatusPlayEnd,
 };
 
 @class XCAVPlayerView;
@@ -39,8 +40,8 @@ typedef NS_ENUM(NSInteger,XCAVPlayerStatues){
 @property (nonatomic, assign) Float64 totalDuration;/**< video duration */
 @property (nonatomic, assign) Float64 timeInterval;/**< available Duration (cached) */
 
-@property (nonatomic, assign) BOOL    isSHowBottomProgressView;/**< default is YES */
-@property (nonatomic, assign) BOOL    isSHowResumViewAtPlayEnd;/**< */
+@property (nonatomic, assign) BOOL    isShowBottomProgressView;/**< default is YES */
+@property (nonatomic, assign) BOOL    isShowResumViewAtPlayEnd;/**< default is YES */
 
 
 /** 播放状态 */

@@ -90,7 +90,8 @@
 
 - (void)setVolum{
     self.clipsToBounds = YES;
-    self.isSHowBottomProgressView = YES;
+    self.isShowBottomProgressView = YES;
+    self.isShowResumViewAtPlayEnd = YES;
     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setCategory:AVAudioSessionCategoryPlayback
              withOptions:AVAudioSessionCategoryOptionMixWithOthers
@@ -129,9 +130,13 @@
     }
 }
 
-- (void)setIsSHowBottomProgressView:(BOOL)isSHowBottomProgressView{
-    _isSHowBottomProgressView = isSHowBottomProgressView;
-    self.progressView.hidden = !isSHowBottomProgressView;
+- (void)setIsShowBottomProgressView:(BOOL)isShowBottomProgressView{
+    _isShowBottomProgressView = isShowBottomProgressView;
+    self.progressView.hidden = !isShowBottomProgressView;
+}
+
+- (void)setIsShowResumViewAtPlayEnd:(BOOL)isShowResumViewAtPlayEnd{
+    _isShowResumViewAtPlayEnd = isShowResumViewAtPlayEnd;
 }
 
 - (void)layoutSubviews{
@@ -302,7 +307,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    if (_isSHowBottomProgressView) {
+    if (_isShowBottomProgressView) {
         if ([self.progressView isHidden]) {
             [self showProgressView:YES];
         }else{
@@ -360,7 +365,10 @@
     [self.progressView.playBtn setImage:[UIImage imageNamed:@"icon_play"] forState:UIControlStateNormal];
     self.canEditProgressView = YES;
     [self hiddenProgressView:NO];
-    self.resumeBtn.hidden = NO;
+    self.resumeBtn.hidden = !_isShowResumViewAtPlayEnd;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(xcAVPlayerView:reloadStatuesChanged:)]) {
+        [self.delegate xcAVPlayerView:self reloadStatuesChanged:XCPlayerStatusPlayEnd];
+    }
 }
 
 
