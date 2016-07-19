@@ -28,9 +28,8 @@ typedef NS_ENUM(NSInteger,XCAVPlayerStatues){
 @end
 
 
+/** 播放器视图请添加到一个 view 上，不要直接添加在 self.view 上 */
 @interface XCAVPlayerView : UIView
-
-
 
 
 @property (nonatomic, strong) NSURL *playerUrl;/**< 播放链接 */

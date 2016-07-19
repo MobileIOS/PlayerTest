@@ -19,6 +19,7 @@
 @property (nonatomic, strong) XZPlayProgressView      *progressView;
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
 @property (nonatomic, strong) UIButton                *resumeBtn;
+@property (nonatomic, strong) UIView                  *xzSuperView;
 @property (nonatomic, assign) BOOL                    canEditProgressView;
 @property (nonatomic, assign) BOOL                    isDragSlider;
 
@@ -97,6 +98,7 @@
              withOptions:AVAudioSessionCategoryOptionMixWithOthers
                    error:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playerPlayToEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarWillChanged:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
 }
 
 - (void)setPlayerUrl:(NSURL *)playerUrl{
@@ -218,7 +220,45 @@
 
 
 - (void)fullBtnClicked:(UIButton *)sender{
-    
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if (orientation == UIInterfaceOrientationPortrait) {
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationLandscapeRight;
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+    }
+    else if (orientation  == UIInterfaceOrientationLandscapeLeft){
+        NSLog(@"----------->Left");
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationPortrait;
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+    }
+    else if (orientation  == UIInterfaceOrientationPortraitUpsideDown){
+        NSLog(@"----------->up");
+    }
+    else if (orientation  == UIInterfaceOrientationLandscapeRight){
+        NSLog(@"----------->right");
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationPortrait;
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+    }
 }
 
 /** 播放时间 00:00:00 */
@@ -354,7 +394,8 @@
         self.progressView.frame = CGRectMake(0, self.bounds.size.height - Bottom_Height, self.bounds.size.width, Bottom_Height);
         self.canEditProgressView = YES;
     }
-
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hiddenProgressView:) object:self];
+    [self performSelector:@selector(hiddenProgressView:) withObject:self afterDelay:3.0];
 }
 
 #pragma notification
@@ -371,5 +412,31 @@
     }
 }
 
+- (void)statusBarWillChanged:(NSNotification *)notification{
+    NSLog(@"%d",[UIApplication sharedApplication].statusBarOrientation);
+    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeLeft || [UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeRight) {
+        if (self.superview != [UIApplication sharedApplication].keyWindow) {
+            self.xzSuperView = self.superview;
+        }
+        if (![[UIApplication sharedApplication].keyWindow.subviews containsObject:self]) {
+            [[UIApplication sharedApplication].keyWindow addSubview:self];
+            self.frame = [UIApplication sharedApplication].keyWindow.bounds;
+        }
+    }else if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown || [UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait){
+        if ([[UIApplication sharedApplication].keyWindow.subviews containsObject:self]) {
+            [self removeFromSuperview];
+        }
+        if (![self.xzSuperView.subviews containsObject:self]) {
+            [self.xzSuperView addSubview:self];
+        }
+        self.frame = self.xzSuperView.bounds;
+    }
+}
+
+
+- (void)dealloc{
+    [self pause];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 
 @end
