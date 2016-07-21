@@ -99,6 +99,7 @@
                    error:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playerPlayToEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarWillChanged:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnterbackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 - (void)setPlayerUrl:(NSURL *)playerUrl{
@@ -218,7 +219,7 @@
     _isDragSlider = NO;
 }
 
-
+#pragma mark----屏幕手动旋转
 - (void)fullBtnClicked:(UIButton *)sender{
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if (orientation == UIInterfaceOrientationPortrait) {
@@ -231,9 +232,7 @@
             [invocation setArgument:&val atIndex:2];
             [invocation invoke];
         }
-    }
-    else if (orientation  == UIInterfaceOrientationLandscapeLeft){
-        NSLog(@"----------->Left");
+    }else if (orientation  == UIInterfaceOrientationLandscapeLeft){
         if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
             SEL selector = NSSelectorFromString(@"setOrientation:");
             NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
@@ -243,12 +242,9 @@
             [invocation setArgument:&val atIndex:2];
             [invocation invoke];
         }
-    }
-    else if (orientation  == UIInterfaceOrientationPortraitUpsideDown){
-        NSLog(@"----------->up");
-    }
-    else if (orientation  == UIInterfaceOrientationLandscapeRight){
-        NSLog(@"----------->right");
+    }else if (orientation  == UIInterfaceOrientationPortraitUpsideDown){
+        
+    }else if (orientation  == UIInterfaceOrientationLandscapeRight){
         if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
             SEL selector = NSSelectorFromString(@"setOrientation:");
             NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
@@ -430,6 +426,12 @@
             [self.xzSuperView addSubview:self];
         }
         self.frame = self.xzSuperView.bounds;
+    }
+}
+
+- (void)applicationEnterbackground:(NSNotification *)notification{
+    if ([self isPlaying]) {
+        [self pause];
     }
 }
 
